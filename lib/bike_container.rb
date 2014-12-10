@@ -7,7 +7,7 @@ module BikeContainer
 	end
 
 	def capacity
-		@capcity ||= DEFAULT_CAPACITY
+		@capacity ||= DEFAULT_CAPACITY
 	end
 		
 	def capacity=(value)
@@ -15,6 +15,7 @@ module BikeContainer
 	end
 
 	def bike_count
+		# bikes is referring to the METHOD which returns []
 		bikes.count
 	end
 
