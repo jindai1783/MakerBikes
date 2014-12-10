@@ -25,6 +25,9 @@ module BikeContainer
 	end
 
 	def release(bike)
+		#>>> check if the passed argument, called bike is indeed from class Bike
+		#>>> check if the bike is in the bikes
+		#>>> + check if the bike is broken, if it is : do not give it!
 		bikes.delete(bike)
 	end
 
@@ -33,7 +36,14 @@ module BikeContainer
 	end
 
 	def available_bikes
+		# good bikes here:
 		bikes.reject {|bike| bike.broken?}
 	end
 
+	def broken_bikes
+		# for van : broken bikes here, comme n get'em!!
+		bikes.select{|bike| bike.broken?}
+	end
+
+	#>>> make a method empty?() to see if there are zero bikes
 end
