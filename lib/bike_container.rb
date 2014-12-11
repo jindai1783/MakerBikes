@@ -25,7 +25,11 @@ module BikeContainer
 	end
 
 	def release(bike)
-		bikes.delete(bike)
+		if bikes.include?(bike)
+			bikes.delete(bike) 
+		else 
+			raise 'Cannot release'
+		end
 	end
 
 	def transfer bikes, to: station

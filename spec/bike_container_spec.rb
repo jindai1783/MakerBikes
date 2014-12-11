@@ -25,6 +25,12 @@ describe BikeContainer do
 		expect(holder.bike_count).to eq 0
 	end
 
+	it 'should not release bikes that are not there' do
+		holder.dock(working_bike)
+		holder.dock(broken_bike)
+		holder.release(working_bike)
+		expect{holder.release(working_bike)}.to raise_error(RuntimeError, 'Cannot release')
+	end
 	# it 'should eject one or more bikes' do
 	# 	holder.dock(bike)
 	# 	holder.eject(bike)
