@@ -11,9 +11,6 @@ class Van
 		self.capacity = options.fetch(:capacity,DEFAULT_CAPACITY)
 	end
 
-	# def accept(bike)
-		# dock(bike)
-	# end 
 	# Design the methods that the van needs to have to move broken bikes from a station to the garage and back 
 	# once they are fixed). Implement them.
 	def eject(*bike)
