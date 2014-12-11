@@ -27,5 +27,9 @@ describe DockingStation do
 		expect(station.bikes).to eq [working_bike]
 	end
 
+	it "will return true if empty" do
+		expect(station.empty?).to eq true
+	end
+
 end
 
