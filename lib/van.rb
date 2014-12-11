@@ -13,9 +13,9 @@ class Van
 		# bikes = []
 	end
 
-	def get_bikes_from(station)
-		station.give_broken_bikes_to(self)
-	end
+	# def get_bikes_from(station)
+	# 	station.give_broken_bikes_to(self)
+	# end
 
 	def get_broken_bikes_from(station)
 		self.dock(station.bikes)
