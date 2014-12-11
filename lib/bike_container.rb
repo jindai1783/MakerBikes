@@ -34,7 +34,11 @@ module BikeContainer
 
 
 	def release_broken_bikes(bike)
-			bikes.delete(bike) 
+			if bike.is_a?(Array)
+				bike.each {|b| bikes.delete(b)} 
+			else
+				bikes.delete(bike)
+			end
 	end
 
 
