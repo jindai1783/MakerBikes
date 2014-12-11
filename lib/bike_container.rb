@@ -32,6 +32,12 @@ module BikeContainer
 		end
 	end
 
+
+	def release_broken_bikes(bike)
+			bikes.delete(bike) 
+	end
+
+
 	def transfer bikes, to: station
 		bikes.each { |bike| to.dock(bike); release(bike)}
 	end

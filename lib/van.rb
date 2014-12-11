@@ -9,7 +9,8 @@ class Van
 
 	def initialize(options = {})
 		self.capacity = options.fetch(:capacity,DEFAULT_CAPACITY)
-		self.bikes = []
+		@bikes = []
+		# bikes = []
 	end
 
 	def get_bikes_from(station)
@@ -17,8 +18,8 @@ class Van
 	end
 
 	def get_broken_bikes_from(station)
-		van.dock(station.bikes)
-		station.release(station.bikes)
+		self.dock(station.bikes)
+		station.release_broken_bikes(station.bikes)
 	end
 
 	def eject_broken_bikes_to(garage)

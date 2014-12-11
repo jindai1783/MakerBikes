@@ -15,6 +15,7 @@ class DockingStation
 
 	def receive_fixed_bikes_from(van)
 		station.dock(van.bikes)
-		van.release(van.bikes)
+		van.release_broken_bikes(van.bikes)
 	end
+
 end
