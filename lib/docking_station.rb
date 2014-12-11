@@ -13,4 +13,8 @@ class DockingStation
 		else return false
 	end
 
+	def receive_fixed_bikes_from(van)
+		station.dock(van.bikes)
+		van.release(van.bikes)
+	end
 end

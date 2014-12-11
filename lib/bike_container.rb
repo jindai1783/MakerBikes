@@ -36,10 +36,6 @@ module BikeContainer
 		bikes.each { |bike| to.dock(bike); release(bike)}
 	end
 
-	def transfer bikes, to: van
-		bikes.each { |bike| to.dock(bike); release(bike)}
-	end
-
 	def full?
 		bikes.count >= capacity
 	end
@@ -52,6 +48,17 @@ module BikeContainer
 	def broken_bikes
 		# for van : broken bikes here, comme n get'em!!
 		bikes.select{|bike| bike.broken?}
+	end
+
+	def give_broken_bikes_to(van)
+		if van.class == Van
+			broken_bikes.each do |bike| 
+				release(bike)
+				van.bikes << bike
+			end
+		else
+			raise "Nice try!!"
+		end
 	end
 
 end

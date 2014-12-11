@@ -6,8 +6,7 @@ describe DockingStation do
 	let(:broken_bike) {double :broken_bike, broken?: true}
 	let(:working_bike){double :working_bike, broken?: false}
 	let(:receiver_station) {double :station}
-	let(:receiver_van) {double :van}
-
+	
 	it 'should allow setting default capacity on initialising' do
 		expect(station.capacity).to eq(155)
 	end
@@ -35,13 +34,6 @@ describe DockingStation do
 		expect(station.empty?).to eq true
 	end
 
-	it "can transfer bikes to a van" do
-		allow(broken_bike).to receive(:dock)
-		station.dock broken_bike
-
-		expect(receiver_van).to receive(:dock). with(broken_bike)
-		station.transfer(station.broken_bikes, to: receiver_van)
-	end
 
 end
 
