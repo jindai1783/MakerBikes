@@ -19,6 +19,9 @@ describe Van do
 		station.dock bike
 		
 		van.get_broken_bikes_from(station)
+		
+		# we took all the broken bikes from the station to the van
+		# so there should be no broken bikes left at the station.
 		expect(station.broken_bikes.count).to eq 0
 	end
 
