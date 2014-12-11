@@ -15,7 +15,7 @@ module BikeContainer
 	end
 
 	def bike_count
-		# bikes is referring to the METHOD which returns []
+		# bikes is referring to the (bike Method) which returns [] 
 		bikes.count
 	end
 
@@ -25,10 +25,11 @@ module BikeContainer
 	end
 
 	def release(bike)
-		#>>> check if the passed argument, called bike is indeed from class Bike
-		#>>> check if the bike is in the bikes
-		#>>> + check if the bike is broken, if it is : do not give it!
 		bikes.delete(bike)
+	end
+
+	def transfer bikes, to: station
+		bikes.each { |bike| to.dock(bike); release(bike)}
 	end
 
 	def full?

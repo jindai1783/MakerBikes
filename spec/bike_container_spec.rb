@@ -15,15 +15,37 @@ describe BikeContainer do
 
 	it 'should accept a bike' do
 		expect(holder.bike_count).to eq(0)
-		holder.dock(bike)
+		holder.dock(working_bike)
 		expect(holder.bike_count).to eq(1)
 	end
 
 	it 'should release a bike' do		
-		holder.dock(working_bike)
-		holder.release(working_bike)
+		holder.dock(bike)
+		holder.release(bike)
 		expect(holder.bike_count).to eq 0
 	end
+
+	# it 'should eject one or more bikes' do
+	# 	holder.dock(bike)
+	# 	holder.eject(bike)
+	# 	expect(holder.bike_count).to eq 0
+	# end
+
+	# it 'should not eject a broken bike' do		
+	# 	#please actually implement this !!
+	# 	holder.dock(bike)
+	# 	bike.break!
+	# 	holder.eject(bike)
+	# 	#I docked it => bike_count=1; tried to release + fail =>
+	# 	expect(holder.bike_count).to eq 1
+	# end
+
+	# it 'should not release a bike if I did not mention a bike' do
+	# 	#please actually implement this !!
+	# 	holder.dock(bike)
+	# 	holder.release()
+	# 	expect(holder.bike_count).to eq 1
+	# end
 
 	it 'should know when it is full' do		
 		expect(holder).not_to be_full
