@@ -22,7 +22,8 @@ class Van
 	end
 
 	def eject_broken_bikes_to(garage)
-		garage.dock(van.bikes)
+		# garage.dock(van.bikes)
+		garage.accept(van.bikes)
 		van.release(van.bikes)
 	end
 end
