@@ -1,3 +1,41 @@
+Boris Bikes à la Makers
+===========
+###Jin & Sanda Pairing FTW!!!
+
+#Classes
+
+##Bike
+Responsibility  | Collaborators
+----------------|---------------------------
+Break           | User
+Be Fixed        | Garage
+
+##Van
+Responsibility  | Collaborators
+----------------|---------------------------
+Transfer        | Bike, Station, Garage
+(Eject)         | Bike, Station, Garage
+(Receive)       | Bike, Station, Garage
+
+
+##Garage
+Responsibility  | Collaborators
+----------------|---------------------------
+Transfer        | Bike, Station, Garage
+Fix             | Bike
+(Eject)         | Bike, Station, Garage
+(Receive)       | Bike, Station, Garage
+
+##Station
+Responsibility  | Collaborators
+----------------|---------------------------
+Rent            | User
+Dock            | User
+Release         | Bike
+Transfer        | Bike, Station, Garage
+(Eject)         | Bike, Station, Garage
+(Receive)       | Bike, Station, Garage
+
 <!-- 
 # # Lesson
 # let(:bike) {double: working_bike, broken?: false}
