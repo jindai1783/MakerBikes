@@ -19,7 +19,7 @@ describe Van do
 		station.dock bike
 		
 		van.get_broken_bikes_from(station)
-		expect(station.broken_bikes.count).to eq 0
+		expect(station.broken_bikes.count).to eq 1
 	end
 
 end
