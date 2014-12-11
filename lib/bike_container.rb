@@ -25,7 +25,7 @@ module BikeContainer
 	end
 
 	def release(bike)
-		if bikes.include?(bike)
+		if bikes.include?(bike) && bike.respond_to?('dock')
 			bikes.delete(bike) 
 		else 
 			raise 'Cannot release'

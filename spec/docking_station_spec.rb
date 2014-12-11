@@ -12,6 +12,7 @@ describe DockingStation do
 	end
 
 	it "can transfer bikes to another container" do
+		allow(broken_bike).to receive(:dock)
 		station.dock broken_bike
 		expect(receiver_station).to receive(:dock). with(broken_bike)
 		station.transfer(station.broken_bikes, to: receiver_station)
@@ -22,6 +23,8 @@ describe DockingStation do
 		station.dock working_bike
 
 		allow(receiver_station).to receive(:dock)
+		allow(working_bike).to receive(:dock)
+		allow(broken_bike).to receive(:dock)
 		
 		station.transfer(station.broken_bikes, to: receiver_station)
 		expect(station.bikes).to eq [working_bike]
