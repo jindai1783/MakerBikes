@@ -15,7 +15,6 @@ module BikeContainer
 	end
 
 	def bike_count
-		# bikes is referring to the (bike Method) which returns [] 
 		bikes.count
 	end
 
@@ -51,12 +50,10 @@ module BikeContainer
 	end
 
 	def available_bikes
-		# good bikes here:
 		bikes.reject {|bike| bike.broken?}
 	end
 
 	def broken_bikes
-		# for van : broken bikes here, comme n get'em!!
 		bikes.select{|bike| bike.broken?}
 	end
 
